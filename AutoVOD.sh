@@ -232,7 +232,7 @@ while true; do
 				# https://ffmpeg.org/ffmpeg.html
 
 				echo "$($CC) Re-encoding stream"
-				if ! streamlink $STREAM_SOURCE_URL $STREAMLINK_OPTIONS "${STREAMLINK_FLAGS[@]}" --stdout | ffmpeg -i pipe:0 -c:v $RE_ENCODE_CODEC -crf $RE_ENCODE_CRF -preset $RE_ECODE_PRESET -hide_banner -loglevel $RE_ENCODE_LOG -f matroska $TEMP_FILE >/dev/null 2>&1; then
+				if ! streamlink $STREAM_SOURCE_URL $STREAMLINK_OPTIONS "${STREAMLINK_FLAGS[@]}" --stdout | ffmpeg -i pipe:0 -c:v $RE_ENCODE_CODEC -crf $RE_ENCODE_CRF -r $RE_ENCODE_FRAMERATE -preset $RE_ENCODE_PRESET -hide_banner -loglevel $RE_ENCODE_LOG -f matroska $TEMP_FILE >/dev/null 2>&1; then
 					echo "$($CC) ffmpeg failed re-encoding the stream"
 				else
 					echo "$($CC) Stream re-encoded as $TEMP_FILE"
