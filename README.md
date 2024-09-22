@@ -334,6 +334,12 @@ It should look something like this:
 
 </details>
 
+### fork specific stuff to do 
+
+Make re encode a if-else structure for h264 and amd ffmpeg variations
+setup odysee autoupload and restream
+
+
 ## Credit
 
 - Original script by [arnicel](https://github.com/arnicel/autoTwitchToYouTube)
